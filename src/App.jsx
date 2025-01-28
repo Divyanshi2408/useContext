@@ -6,6 +6,9 @@ import Login from './Global Authentication/Login';
 import Register from './Global Authentication/Register';
 import Logout from './Global Authentication/Logout';
 import { AuthProvider } from './Global Authentication/AuthContext';
+import { LanguageProvider } from "./Multilingual/LanguageContext";
+import LanguageSelector from "./Multilingual/LanguageSelector";
+import Greeting from "./Multilingual/Greeting";
 
 const App = () => {
   return (
@@ -21,7 +24,14 @@ const App = () => {
           <Register />
           <Logout />
         </div>
-      </AuthProvider></>
+      </AuthProvider>
+      <LanguageProvider>
+      <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <LanguageSelector />
+        <Greeting />
+      </div>
+    </LanguageProvider>
+    </>
   )
 }
 
