@@ -12,6 +12,8 @@ import Greeting from "./Multilingual/Greeting";
 import { CartProvider } from "./shopping cart/CartContext";
 import ProductList from "./shopping cart/ProductList";
 import Cart from "./shopping cart/Cart";
+import { ThemesProvider } from "./hierarchical theming/ThemeContext";
+import ThemeddComponent from "./hierarchical theming/ThemedComponent";
 
 const App = () => {
   return (
@@ -40,6 +42,22 @@ const App = () => {
         <Cart />
       </div>
     </CartProvider>
+    <ThemesProvider>
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <h1>Multi-Level Theming System</h1>
+        <ThemeddComponent>
+          <p>This is the default theme inherited from the provider.</p>
+
+          <ThemeddComponent override={{ background: "lightblue", color: "darkblue" }}>
+            <p>This component overrides the parent theme.</p>
+
+            <ThemeddComponent override={{ background: "lightgreen", color: "darkgreen" }}>
+              <p>This is a nested component with its own overridden theme.</p>
+            </ThemeddComponent>
+          </ThemeddComponent>
+        </ThemeddComponent>
+      </div>
+    </ThemesProvider>
     </>
   )
 }
