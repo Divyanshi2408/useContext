@@ -9,6 +9,9 @@ import { AuthProvider } from './Global Authentication/AuthContext';
 import { LanguageProvider } from "./Multilingual/LanguageContext";
 import LanguageSelector from "./Multilingual/LanguageSelector";
 import Greeting from "./Multilingual/Greeting";
+import { CartProvider } from "./shopping cart/CartContext";
+import ProductList from "./shopping cart/ProductList";
+import Cart from "./shopping cart/Cart";
 
 const App = () => {
   return (
@@ -31,6 +34,12 @@ const App = () => {
         <Greeting />
       </div>
     </LanguageProvider>
+    <CartProvider>
+      <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <ProductList />
+        <Cart />
+      </div>
+    </CartProvider>
     </>
   )
 }
