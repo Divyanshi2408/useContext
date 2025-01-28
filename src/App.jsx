@@ -16,6 +16,9 @@ import { ThemesProvider } from "./hierarchical theming/ThemeContext";
 import ThemeddComponent from "./hierarchical theming/ThemedComponent";
 import { RoleProvider } from "./RBAC/RoleContext";
 import Dashboard from "./RBAC/Dashboard";
+import { ThemeeProvider } from "./nested context/ThemeeContext";
+import { LanguagesProvider } from "./nested context/LanguagesContext";
+import NestedComponent from "./nested context/NestedComponent";
 
 const App = () => {
   return (
@@ -63,6 +66,14 @@ const App = () => {
     <RoleProvider>
       <Dashboard />
     </RoleProvider>
+    <ThemeeProvider>
+      <LanguagesProvider>
+        <div style={{ padding: "20px" }}>
+          <h1>Multilingual & Theme-Aware App</h1>
+          <NestedComponent />
+        </div>
+      </LanguagesProvider>
+    </ThemeeProvider>
     </>
   )
 }
