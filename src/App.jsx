@@ -14,6 +14,8 @@ import ProductList from "./shopping cart/ProductList";
 import Cart from "./shopping cart/Cart";
 import { ThemesProvider } from "./hierarchical theming/ThemeContext";
 import ThemeddComponent from "./hierarchical theming/ThemedComponent";
+import { RoleProvider } from "./RBAC/RoleContext";
+import Dashboard from "./RBAC/Dashboard";
 
 const App = () => {
   return (
@@ -58,6 +60,9 @@ const App = () => {
         </ThemeddComponent>
       </div>
     </ThemesProvider>
+    <RoleProvider>
+      <Dashboard />
+    </RoleProvider>
     </>
   )
 }
